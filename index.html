@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#126b55">
+  <meta name="description" content="REVIZO — Révise mieux, progresse chaque jour, réussis tes examens.">
+  <title>REVIZO — Réussis tes examens</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="REVIZO accueil">
+        <span class="brand-mark">R</span><span>REVIZO</span>
+      </a>
+      <button id="language-button" class="language-button" type="button">FR / EN</button>
+    </header>
+
+    <main>
+      <section id="welcome-screen" class="welcome-screen">
+        <div class="hero-icon" aria-hidden="true">📘</div>
+        <p class="eyebrow" data-i18n="welcomeEyebrow">TON PARTENAIRE DE RÉVISION</p>
+        <h1 data-i18n="welcomeTitle">Révise mieux.<br>Réussis tes examens.</h1>
+        <p class="hero-description" data-i18n="welcomeText">Des cours, des exercices et des examens blancs pour progresser à ton rythme.</p>
+        <div class="setup-card">
+          <label for="student-name" data-i18n="nameLabel">Ton prénom</label>
+          <input id="student-name" type="text" maxlength="30" placeholder="Ex. Amina">
+          <label for="school-level" data-i18n="levelLabel">Ton niveau</label>
+          <select id="school-level">
+            <option value="college">Collège</option>
+            <option value="lycee">Lycée</option>
+          </select>
+          <label for="school-class" data-i18n="classLabel">Ta classe</label>
+          <select id="school-class"></select>
+          <label for="school-series" data-i18n="seriesLabel">Ta série (si applicable)</label>
+          <select id="school-series">
+            <option value="">Aucune / Non applicable</option>
+          </select>
+          <button id="start-button" class="primary-button" type="button" data-i18n="startButton">Commencer</button>
+          <p id="setup-error" class="error-message" role="alert"></p>
+        </div>
+      </section>
+
+      <section id="dashboard-screen" class="dashboard-screen hidden">
+        <div class="dashboard-heading">
+          <div>
+            <p class="eyebrow" data-i18n="dashboardEyebrow">ESPACE ÉLÈVE</p>
+            <h1><span data-i18n="hello">Bonjour</span> <span id="display-name"></span> 👋</h1>
+            <p id="display-class" class="muted"></p>
+          </div>
+          <button id="edit-profile" class="small-button" type="button" data-i18n="editProfile">Modifier</button>
+        </div>
+        <div class="progress-card">
+          <div><strong data-i18n="myProgress">Ma progression</strong><span class="muted" data-i18n="progressSoon">Ton suivi apparaîtra ici.</span></div>
+          <div class="progress-track"><span></span></div>
+          <small data-i18n="progressStart">Commence une activité pour suivre tes progrès.</small>
+        </div>
+        <h2 data-i18n="learningSpace">Mon espace de révision</h2>
+        <div class="module-grid">
+          <button class="module-card" data-module="courses" type="button"><span>📚</span><strong data-i18n="courses">Cours</strong><small data-i18n="coursesDesc">Apprendre les notions</small></button>
+          <button class="module-card" data-module="exercises" type="button"><span>✍️</span><strong data-i18n="exercises">Exercices</strong><small data-i18n="exercisesDesc">S'entraîner</small></button>
+          <button class="module-card" data-module="quizzes" type="button"><span>🧠</span><strong data-i18n="quizzes">Quiz</strong><small data-i18n="quizzesDesc">Tester ses connaissances</small></button>
+          <button class="module-card" data-module="exams" type="button"><span>⏱️</span><strong data-i18n="exams">Examens blancs</strong><small data-i18n="examsDesc">Se préparer aux examens</small></button>
+        </div>
+        <button id="reset-profile" class="text-button" type="button" data-i18n="resetProfile">Réinitialiser mon profil</button>
+      </section>
+
+      <section id="module-screen" class="module-screen hidden">
+        <button id="back-button" class="back-button" type="button">← <span data-i18n="back">Retour</span></button>
+        <div class="module-intro">
+          <div class="hero-icon small" id="module-icon">📚</div>
+          <p class="eyebrow">REVIZO</p>
+          <h1 id="module-title"></h1>
+          <p id="module-description" class="hero-description"></p>
+        </div>
+        <div class="notice-card">
+          <strong data-i18n="moduleInPreparation">Module en préparation</strong>
+          <p data-i18n="moduleNotice">Cette première version prépare la structure de l'application. Les cours, exercices, quiz et examens seront ajoutés progressivement.</p>
+        </div>
+      </section>
+    </main>
+    <footer>REVIZO <span>•</span> <span data-i18n="tagline">Révise mieux. Progresse chaque jour. Réussis tes examens.</span></footer>
+  </div>
+  <script src="js/data/school-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

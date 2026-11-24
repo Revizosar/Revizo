@@ -1,0 +1,66 @@
+:root {
+  --green: #126b55;
+  --green-dark: #0b4e40;
+  --blue: #2463a6;
+  --ink: #172b35;
+  --muted: #6b7c83;
+  --surface: #ffffff;
+  --background: #f3f7f6;
+  --border: #e1eae7;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: var(--background); }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+.app-shell { width: min(100% - 32px, 920px); margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; }
+.topbar { height: 76px; display: flex; align-items: center; justify-content: space-between; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--green-dark); font-size: 1.25rem; font-weight: 900; letter-spacing: .08em; text-decoration: none; }
+.brand-mark { width: 38px; height: 38px; border-radius: 12px 12px 12px 4px; display: grid; place-items: center; color: white; background: var(--green); }
+.language-button, .small-button, .back-button { border: 1px solid var(--border); background: white; color: var(--ink); border-radius: 10px; padding: 10px 13px; font-weight: 700; }
+main { flex: 1; }
+.welcome-screen { max-width: 560px; margin: 36px auto 48px; text-align: center; }
+.hero-icon { width: 76px; height: 76px; margin: 0 auto 18px; display: grid; place-items: center; border-radius: 24px; background: #e0f1eb; font-size: 2.3rem; }
+.hero-icon.small { width: 58px; height: 58px; font-size: 1.7rem; margin-bottom: 12px; }
+.eyebrow { color: var(--green); font-size: .75rem; font-weight: 900; letter-spacing: .14em; }
+h1 { margin: 8px 0 14px; font-size: clamp(2rem, 7vw, 3.3rem); line-height: 1.08; letter-spacing: -.045em; }
+.hero-description { color: var(--muted); line-height: 1.65; max-width: 500px; margin: 0 auto 24px; }
+.setup-card, .progress-card, .notice-card { text-align: left; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px; box-shadow: 0 12px 34px rgba(19, 64, 52, .05); }
+.setup-card { display: grid; gap: 9px; }
+label { margin-top: 7px; font-size: .9rem; font-weight: 750; }
+input, select { width: 100%; padding: 13px 14px; border: 1px solid var(--border); border-radius: 11px; background: #fbfdfc; color: var(--ink); outline-color: var(--green); }
+.primary-button { margin-top: 12px; border: 0; border-radius: 12px; padding: 15px; color: white; background: var(--green); font-weight: 800; }
+.primary-button:hover { background: var(--green-dark); }
+.error-message { color: #b42318; min-height: 18px; margin: 0; font-size: .85rem; }
+.hidden { display: none !important; }
+.dashboard-screen { padding: 28px 0 50px; }
+.dashboard-heading { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.dashboard-heading h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); }
+.muted, small { color: var(--muted); }
+.progress-card { margin: 24px 0 32px; }
+.progress-card > div:first-child { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.progress-track { height: 9px; margin: 18px 0 9px; overflow: hidden; border-radius: 99px; background: #e8efed; }
+.progress-track span { display: block; width: 0; height: 100%; background: var(--green); }
+h2 { font-size: 1.35rem; }
+.module-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.module-card { min-height: 150px; padding: 20px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; text-align: left; border: 1px solid var(--border); border-radius: 17px; background: white; color: var(--ink); }
+.module-card:hover { border-color: var(--green); transform: translateY(-2px); }
+.module-card span { font-size: 1.7rem; }
+.module-card strong { font-size: 1.05rem; }
+.module-card small { font-size: .82rem; }
+.text-button { margin-top: 24px; border: 0; background: transparent; color: var(--muted); text-decoration: underline; }
+.module-screen { max-width: 650px; margin: 32px auto; }
+.module-intro { text-align: center; padding: 28px 0; }
+.module-intro h1 { font-size: 2.4rem; }
+.notice-card { text-align: center; }
+.notice-card p { color: var(--muted); line-height: 1.6; }
+footer { padding: 24px 0; color: var(--muted); text-align: center; font-size: .8rem; }
+footer span:first-child { padding: 0 5px; }
+@media (max-width: 520px) {
+  .app-shell { width: min(100% - 22px, 920px); }
+  .welcome-screen { margin-top: 22px; }
+  .setup-card { padding: 18px; }
+  .module-grid { gap: 10px; }
+  .module-card { min-height: 136px; padding: 15px; }
+  .progress-card > div:first-child { display: grid; }
+}
